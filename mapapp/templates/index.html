@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block contents %}
+
+  <br>
+   <div class="container">
+   <h4>kakao map</h4>
+  <form action="{% url 'kakao'%}">
+  {% csrf_token %}
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>위도</label>
+      <input name="we" type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label >경도</label>
+      <input name="ku" type="text" class="form-control">
+    </div>
+  </div>
+      <button type="submit" class="btn btn-primary">지도</button>
+</form>
+</div>
+
+<br>
+<div class="container">
+   <h4>google map</h4>
+  <form action="{% url 'google'%}">
+  {% csrf_token %}
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>위도</label>
+      <input name="we" type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label >경도</label>
+      <input name="ku" type="text" class="form-control">
+    </div>
+  </div>
+      <button type="submit" class="btn btn-primary">지도</button>
+</form>
+</div>
+  </body>
+</html>
+
+{% endblock %}

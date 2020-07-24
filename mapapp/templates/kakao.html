@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block contents %}
+  <body>
+  <br>
+  
+  <div class="container">
+<h3>for kakao map</h3>
+<br>
+    <div id="map" style="width: 500px; height: 400px;"></div>
+    <script
+      type="text/javascript"
+      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=06eee32c30ee7e7d259c598a56468269"></script>
+    ></script>
+    <script>
+      var lat = {{locates.we}}
+      var lng = {{locates.ku}}
+
+      var container = document.getElementById("map");
+      var options = {
+        center: new kakao.maps.LatLng(lat, lng),
+        level: 3,
+      };
+
+      var map = new kakao.maps.Map(container, options);
+    </script>
+    <br>
+    <p>위도 : {{locates.we}}, 경도 : {{locates.ku}}
+    <br>
+    <a href="{% url 'index'%}"> home으로 </a>
+    </div>
+  </body>
+{% endblock %}
+
